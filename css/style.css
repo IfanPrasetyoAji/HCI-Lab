@@ -1,0 +1,65 @@
+body {
+    font-family: "DM Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+    background-image: url("../assets/images/iccup-xNtwmcRP-gw-unsplash.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.brand-logo {
+    font-family: "Cormorant Garamond";
+    font-weight: 700;
+    font-size: 2.5rem;
+}
+
+.nav-bar {
+    display: grid;
+    align-items: center;
+    justify-content: space-between;
+    grid-template-columns: auto auto auto;
+    padding: 0 2rem 0 2rem;
+    color: white;
+}
+
+.nav-links {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    /*gap: 0.25rem;*/
+    margin: 0;
+    padding: 0;
+}
+
+.nav-item,
+.nav-cta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: inherit;
+    padding: 0.75rem 1.5rem 0.75rem 1.5rem;
+}
+
+.nav-bar img {
+    filter: invert(1);
+}
+
+.nav-wrapper {
+    border-color: var(lab(100% 0 0/0.1));
+    outline-color: color-mix(in oklab, lab(48.496% 0 0) 50%, transparent);
+    width: auto;
+    height: auto;
+    border-radius: 1rem;
+    --glass-frost: 0.2;
+    --glass-saturation: 1;
+    will-change: backdrop-filter, transform;
+    transform: translateZ(0px);
+    backface-visibility: hidden;
+    perspective: 1000px;
+    contain: layout style paint;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(12px) saturate(1.8) brightness(1.1);
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 0px 0px 0.5px inset;
+}
