@@ -1,20 +1,44 @@
+html,
+body {
+    min-height: 100%;
+}
+
 body {
     font-family: "DM Mono", monospace;
     font-weight: 400;
     font-style: normal;
+    margin: 0;
+    overflow-y: auto;
     background-image: url("../assets/images/iccup-xNtwmcRP-gw-unsplash.jpg");
     background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-attachment: scroll;
     background-size: cover;
+}
+
+.page-scroll {
+    min-height: 500vh;
+    overflow-y: auto;
+    padding-top: 5rem;
 }
 
 .brand-logo {
     font-family: "Cormorant Garamond";
     font-weight: 700;
-    font-size: 2.5rem;
+    font-size: 2.4rem;
+    letter-spacing: 0.04em;
+    text-transform: none;
+    color: rgba(255, 255, 255, 0.95);
+    text-shadow:
+        0 2px 12px rgba(255, 255, 255, 0.18),
+        0 12px 30px rgba(0, 0, 0, 0.35);
 }
 
 .nav-bar {
+    position: fixed;
+    top: 1rem;
+    left: 0;
+    right: 0;
+    z-index: 1000;
     display: grid;
     align-items: center;
     justify-content: space-between;
@@ -39,27 +63,94 @@ body {
     gap: 0.5rem;
     text-decoration: none;
     color: inherit;
-    padding: 0.75rem 1.5rem 0.75rem 1.5rem;
+    padding: 0.75rem 1.25rem 0.75rem 1.25rem;
 }
 
-.nav-bar img {
+.nav-item {
+    opacity: 0.75;
+}
+
+.nav-label {
+    max-width: 0;
+    opacity: 0;
+    overflow: hidden;
+    transform: translateY(2px);
+    transition:
+        max-width 0.2s ease,
+        opacity 0.2s ease,
+        transform 0.2s ease;
+    white-space: nowrap;
+}
+
+.nav-item:hover .nav-label,
+.nav-item:focus-visible .nav-label,
+.nav-item[aria-current="page"] .nav-label,
+.nav-item.is-active .nav-label {
+    max-width: 12rem;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.nav-links img {
     filter: invert(1);
 }
 
+.nav-item:hover,
+.nav-item:focus-visible,
+.nav-item[aria-current="page"],
+.nav-item.is-active {
+    opacity: 1;
+}
+
+.cta-label {
+    color: black;
+}
+
+.nav-cta {
+    background-color: white;
+    opacity: 0.8;
+    border-radius: 1rem;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.nav-cta:hover,
+.nav-cta:focus-visible,
+.nav-cta[aria-current="page"] {
+    /*transform: translateY(px);*/
+    opacity: 1;
+    box-shadow:
+        0 0 0 2px rgba(255, 255, 255, 0.45),
+        0 0 18px rgba(255, 255, 255, 0.5),
+        0 10px 20px rgba(0, 0, 0, 0.18);
+}
+
 .nav-wrapper {
-    border-color: var(lab(100% 0 0/0.1));
+    position: relative;
+    border-color: lab(100% 0 0/0.1);
     outline-color: color-mix(in oklab, lab(48.496% 0 0) 50%, transparent);
     width: auto;
     height: auto;
     border-radius: 1rem;
-    --glass-frost: 0.2;
-    --glass-saturation: 1;
     will-change: backdrop-filter, transform;
     transform: translateZ(0px);
     backface-visibility: hidden;
     perspective: 1000px;
     contain: layout style paint;
-    background: rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(12px) saturate(1.8) brightness(1.1);
+    background: rgba(0, 0, 0, 0.25);
     box-shadow: rgba(255, 255, 255, 0.1) 0px 0px 0px 0.5px inset;
+}
+
+.nav-effect {
+    position: absolute;
+    inset: 0;
+    filter: url("#glass-distortion");
+    overflow: hidden;
+}
+
+.blur {
+    backdrop-filter: blur(12px) saturate(1.8) brightness(1.1);
+    -webkit-backdrop-filter: blur(12px) saturate(1.8) brightness(1.1);
 }
