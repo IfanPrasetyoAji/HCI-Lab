@@ -8,32 +8,43 @@ body {
     font-weight: 400;
     font-style: normal;
     margin: 0;
-    overflow-y: auto;
-    background-image: url("../assets/images/iccup-xNtwmcRP-gw-unsplash.jpg");
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-    background-size: cover;
+    overflow-x: hidden;
 }
 
-.page-scroll {
-    min-height: 500vh;
-    overflow-y: auto;
-    padding-top: 5rem;
+.bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -999;
+}
+
+.bg-image img {
+    width: 120%;
+    height: auto;
+    display: block;
+}
+
+.brand-logo-container {
+    display: flex;
+    align-items: center;
 }
 
 .brand-logo {
-    font-family: "Cormorant Garamond";
+    font-family: "Cormorant Garamond", serif;
+    font-size: 2.75rem;
     font-weight: 700;
-    font-size: 2.4rem;
-    letter-spacing: 0.04em;
-    text-transform: none;
-    color: rgba(255, 255, 255, 0.95);
-    text-shadow:
-        0 2px 12px rgba(255, 255, 255, 0.18),
-        0 12px 30px rgba(0, 0, 0, 0.35);
+
+    /* Create a subtle silver/white gradient */
+    background: linear-gradient(135deg, #ffffff 0%, #e0e0e0 50%, #ffffff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    /* Add a tight, bright shadow to simulate an etched bevel */
+    filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.4));
 }
 
-.nav-bar {
+.site-header {
     position: fixed;
     top: 1rem;
     left: 0;
@@ -43,8 +54,7 @@ body {
     align-items: center;
     justify-content: space-between;
     grid-template-columns: auto auto auto;
-    padding: 0 2rem 0 2rem;
-    color: white;
+    padding: 0 2rem;
 }
 
 .nav-links {
@@ -57,13 +67,13 @@ body {
 }
 
 .nav-item,
-.nav-cta {
+.cta {
     display: flex;
     align-items: center;
     gap: 0.5rem;
     text-decoration: none;
     color: inherit;
-    padding: 0.75rem 1.25rem 0.75rem 1.25rem;
+    padding: 0.75rem 1.25rem;
 }
 
 .nav-item {
@@ -80,6 +90,7 @@ body {
         opacity 0.2s ease,
         transform 0.2s ease;
     white-space: nowrap;
+    color: white;
 }
 
 .nav-item:hover .nav-label,
@@ -106,7 +117,7 @@ body {
     color: black;
 }
 
-.nav-cta {
+.cta {
     background-color: white;
     opacity: 0.8;
     border-radius: 1rem;
@@ -116,9 +127,9 @@ body {
         opacity 0.2s ease;
 }
 
-.nav-cta:hover,
-.nav-cta:focus-visible,
-.nav-cta[aria-current="page"] {
+.cta:hover,
+.cta:focus-visible,
+.cta[aria-current="page"] {
     /*transform: translateY(px);*/
     opacity: 1;
     box-shadow:
@@ -127,30 +138,31 @@ body {
         0 10px 20px rgba(0, 0, 0, 0.18);
 }
 
-.nav-wrapper {
+.nav-container {
     position: relative;
-    border-color: lab(100% 0 0/0.1);
-    outline-color: color-mix(in oklab, lab(48.496% 0 0) 50%, transparent);
     width: auto;
     height: auto;
-    border-radius: 1rem;
-    will-change: backdrop-filter, transform;
-    transform: translateZ(0px);
-    backface-visibility: hidden;
-    perspective: 1000px;
-    contain: layout style paint;
-    background: rgba(0, 0, 0, 0.25);
+
+    border-color: lab(100% 0 0/0.1);
+    outline-color: color-mix(in oklab, lab(48.496% 0 0) 50%, transparent);
+    background: rgba(0, 0, 0, 0.1);
     box-shadow: rgba(255, 255, 255, 0.1) 0px 0px 0px 0.5px inset;
+
+    border-radius: 1rem;
 }
 
-.nav-effect {
-    position: absolute;
-    inset: 0;
-    filter: url("#glass-distortion");
+.nav-content {
+    position: relative;
+    z-index: 3;
+}
+
+.liquid-glass {
+    position: relative;
+
+    /* blur fallback buat firefox */
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+
     overflow: hidden;
-}
-
-.blur {
-    backdrop-filter: blur(12px) saturate(1.8) brightness(1.1);
-    -webkit-backdrop-filter: blur(12px) saturate(1.8) brightness(1.1);
+    transform: translateZ(0px);
 }
