@@ -16,8 +16,9 @@ body {
     top: 0;
     left: 0;
     background-image: url("../assets/images/bg-image.jpg");
-    background-position-y: -10rem;
-    width: 100vw;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
     height: 100%;
     overflow: hidden;
     z-index: -999;
@@ -94,7 +95,7 @@ body {
 .nav-item.is-active .nav-label {
     max-width: 12rem;
     opacity: 1;
-    transform: translateY(0);
+    /*transform: translateY(0);*/
 }
 
 .nav-links img {
@@ -151,7 +152,7 @@ body {
     z-index: 3;
 }
 
-.liquid-glass {
+.blur {
     position: relative;
 
     /* firefox y u no support svg backdrop laa */
@@ -159,7 +160,15 @@ body {
     -webkit-backdrop-filter: blur(16px);
 
     overflow: hidden;
-    transform: translateZ(0px);
+}
+
+.liquid-glass {
+    position: relative;
+
+    overflow: hidden;
+    transform: translate3d(0, 0, 0);
+    will-change: transform, backdrop-filter;
+    backface-visibility: hidden;
 }
 
 .hero-section {
@@ -280,7 +289,7 @@ body {
     position: absolute;
     top: 2rem;
     left: 2rem;
-    background: white;
+    background: rgba(255, 255, 255, 01);
     color: black;
     padding: 0.5rem 1.25rem;
     border-radius: 2rem;
@@ -332,6 +341,7 @@ body {
 }
 
 .shop-btn {
+    font-family: "DM Mono";
     display: inline-block;
     background: transparent;
     color: white;
@@ -447,5 +457,254 @@ body {
     .footer-content {
         grid-template-columns: 1fr;
         gap: 2.5rem;
+    }
+}
+
+/* Products Page */
+.products-main {
+    position: relative;
+    padding: 8rem 0;
+    min-height: 100vh;
+}
+
+.products-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.products-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.products-header h2 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 3rem;
+    color: white;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    margin: 0 0 1rem 0;
+}
+
+.products-header p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.product-card {
+    border-radius: 1.5rem;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: rgba(255, 255, 255, 0.05) 0px 0px 0px 0.5px inset;
+    overflow: hidden;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow:
+        0 15px 30px rgba(0, 0, 0, 0.2),
+        rgba(255, 255, 255, 0.1) 0px 0px 0px 0.5px inset;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.product-image-container {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+}
+
+.product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.product-card:hover .product-image {
+    transform: scale(1.05);
+}
+
+.product-info {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+}
+
+.product-subtitle {
+    font-family: "DM Mono", mono;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin: 0 0 1.5rem 0;
+    padding: 0;
+    letter-spacing: 0.05em;
+}
+
+.product-title {
+    font-family: "Playfair Display", serif;
+    font-size: 1.8rem;
+    margin: 0 0 0.5rem 0;
+}
+
+.product-price-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.product-price {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+/* Modal Styles */
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 2000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+}
+
+.modal-backdrop.is-open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.product-modal {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow:
+        0 25px 50px rgba(0, 0, 0, 0.3),
+        rgba(255, 255, 255, 0.05) 0px 0px 0px 0.5px inset;
+    border-radius: 1.5rem;
+    width: 90%;
+    max-width: 900px;
+    max-height: 90vh;
+    overflow-y: auto;
+    color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+}
+
+.modal-backdrop.is-open .product-modal {
+    transform: translateY(0);
+}
+
+.modal-close {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background 0.2s ease;
+    z-index: 10;
+}
+
+.modal-close:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.modal-image-container {
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+}
+
+.modal-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.modal-details {
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.modal-title {
+    font-family: "Playfair Display", serif;
+    font-size: 2.5rem;
+    margin: 0 0 0.5rem 0;
+}
+
+.modal-subtitle {
+    font-family: "DM Mono", mono;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 1rem;
+    text-transform: uppercase;
+    margin: 0 0 2rem 0;
+    letter-spacing: 0.05em;
+}
+
+.modal-desc {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0 0 2rem 0;
+}
+
+.modal-price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+    .product-modal {
+        grid-template-columns: 1fr;
+    }
+    .modal-image-container {
+        height: 250px;
+        min-height: 250px;
+    }
+    .modal-details {
+        padding: 2rem;
+    }
+    .modal-title {
+        font-size: 2rem;
     }
 }
