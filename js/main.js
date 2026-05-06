@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const modalBackdrop = document.getElementById("productModal");
   if (modalBackdrop) {
     const closeModalBtn = document.getElementById("closeModal");
-    const moreDetailsBtns = document.querySelectorAll(".more-details-btn");
+    const openModalBtns = document.querySelectorAll(".open-modal-btn");
 
     const modalTitle = document.getElementById("modalTitle");
     const modalSubtitle = document.getElementById("modalSubtitle");
@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
       modalBackdrop.classList.remove("is-open");
     }
 
-    moreDetailsBtns.forEach((btn) => {
+    openModalBtns.forEach((btn) => {
       btn.addEventListener("click", () => {
         const data = {
           title: btn.getAttribute("data-title"),
