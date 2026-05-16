@@ -10,7 +10,6 @@
             rel="stylesheet"
         />
         <link rel="stylesheet" href="../css/style.css" />
-        <script src="../js/main.js" defer></script>
         <script src="../js/liquidGlass.js" defer></script>
         <title>eNVision - Rewards</title>
     </head>
@@ -19,11 +18,14 @@
             <div class="brand-logo-container">
                 <span class="brand-logo">eNVision</span>
             </div>
-            <nav class="nav-container liquid-glass blur">
+            <nav class="nav-container desktop liquid-glass blur">
                 <div class="nav-content">
                     <ul class="nav-links">
                         <li>
-                            <a class="nav-item" href="../index.html">
+                            <a
+                                class="nav-item"
+                                href="../index.html"
+                            >
                                 <img
                                     src="../assets/icons/house.svg"
                                     alt="home logo"
@@ -45,11 +47,7 @@
                             </a>
                         </li>
                         <li>
-                            <a
-                                class="nav-item"
-                                href="rewards.html"
-                                aria-current="page"
-                            >
+                            <a class="nav-item" href="rewards.html" aria-current="page">
                                 <img
                                     src="../assets/icons/gift.svg"
                                     alt="reward logo"
@@ -73,7 +71,60 @@
                     </ul>
                 </div>
             </nav>
-            <div class="cta-container">
+            <nav class="nav-container mobile liquid-glass blur">
+                <div class="nav-content">
+                    <ul class="nav-links">
+                        <li>
+                            <a
+                                class="nav-item"
+                                href="../index.html"
+                            >
+                                <img
+                                    src="../assets/icons/house.svg"
+                                    alt="home logo"
+                                    width="20"
+                                    height="20"
+                                />
+                                <span class="nav-label">Home</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-item" href="products.html">
+                                <img
+                                    src="../assets/icons/glasses.svg"
+                                    alt="product logo"
+                                    width="20"
+                                    height="20"
+                                />
+                                <span class="nav-label">Products</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-item" href="rewards.html" aria-current="page">
+                                <img
+                                    src="../assets/icons/gift.svg"
+                                    alt="reward logo"
+                                    width="20"
+                                    height="20"
+                                />
+                                <span class="nav-label">Rewards</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-item" href="about-us.html">
+                                <img
+                                    src="../assets/icons/users-round.svg"
+                                    alt="about logo"
+                                    width="20"
+                                    height="20"
+                                />
+                                <span class="nav-label">About Us</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="cta-container blur">
                 <a class="cta" href="order.html">
                     <img
                         src="../assets/icons/shopping-cart.svg"
@@ -86,8 +137,69 @@
             </div>
         </header>
 
-        <main class="site-content">
+        <main class="site-content rewards-main">
             <div class="bg-image"></div>
+
+            <section class="rewards-hero">
+                <div class="rewards-eyebrow">eNVision Rewards</div>
+                <h1>See more. Earn more.</h1>
+                <p>
+                    Collect points every time you shop, then redeem them for
+                    exclusive discounts, lens upgrades, and member-only perks.
+                </p>
+                <a href="order.html" class="hero-btn">Start Collecting</a>
+            </section>
+
+            <section class="rewards-section">
+                <div class="rewards-container">
+                    <div class="rewards-header">
+                        <h2>Points Exchange</h2>
+                        <p>Redeem your points for exclusive rewards.</p>
+                    </div>
+
+                    <div class="rewards-grid">
+                        <article class="reward-card blur">
+                            <span class="reward-value">100</span>
+                            <h3>Rp50.000 Voucher</h3>
+                            <p>
+                                Redeem 100 points for a Rp50.000 discount on
+                                your next eyewear purchase.
+                            </p>
+                        </article>
+
+                        <article class="reward-card blur">
+                            <span class="reward-value">250</span>
+                            <h3>Anti-Glare Coating</h3>
+                            <p>
+                                Get a free anti-glare lens coating upgrade for
+                                clearer vision in all lighting conditions.
+                            </p>
+                        </article>
+
+                        <article class="reward-card blur">
+                            <span class="reward-value">500</span>
+                            <h3>Frame Upgrade</h3>
+                            <p>
+                                Exchange 500 points for an exclusive frame
+                                upgrade from our premium collection.
+                            </p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="rewards-tier-section">
+                <div class="rewards-container">
+                    <div class="tier-card blur">
+                        <p class="tier-label">How it works</p>
+                        <h2>1 point for every Rp10.000 spent.</h2>
+                        <p>
+                            Redeem your points on your next visit or keep
+                            collecting to unlock higher-value rewards.
+                        </p>
+                    </div>
+                </div>
+            </section>
         </main>
 
         <footer class="site-footer">

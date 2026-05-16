@@ -10,7 +10,10 @@
             rel="stylesheet"
         />
         <link rel="stylesheet" href="../css/style.css" />
-        <script src="../js/main.js" defer></script>
+        <script src="../js/products.js" defer></script>
+        <script src="../js/showProduct.js" defer></script>
+        <script src="../js/productCart.js" defer></script>
+        <script src="../js/modal.js" defer></script>
         <script src="../js/liquidGlass.js" defer></script>
         <title>eNVision - Products</title>
     </head>
@@ -19,11 +22,14 @@
             <div class="brand-logo-container">
                 <span class="brand-logo">eNVision</span>
             </div>
-            <nav class="nav-container liquid-glass blur">
+            <nav class="nav-container desktop liquid-glass blur">
                 <div class="nav-content">
                     <ul class="nav-links">
                         <li>
-                            <a class="nav-item" href="../index.html">
+                            <a
+                                class="nav-item"
+                                href="../index.html"
+                            >
                                 <img
                                     src="../assets/icons/house.svg"
                                     alt="home logo"
@@ -34,11 +40,7 @@
                             </a>
                         </li>
                         <li>
-                            <a
-                                class="nav-item"
-                                href="products.html"
-                                aria-current="page"
-                            >
+                            <a class="nav-item" href="products.html" aria-current="page">
                                 <img
                                     src="../assets/icons/glasses.svg"
                                     alt="product logo"
@@ -73,7 +75,60 @@
                     </ul>
                 </div>
             </nav>
-            <div class="cta-container">
+            <nav class="nav-container mobile liquid-glass blur">
+                <div class="nav-content">
+                    <ul class="nav-links">
+                        <li>
+                            <a
+                                class="nav-item"
+                                href="../index.html"
+                            >
+                                <img
+                                    src="../assets/icons/house.svg"
+                                    alt="home logo"
+                                    width="20"
+                                    height="20"
+                                />
+                                <span class="nav-label">Home</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-item" href="products.html" aria-current="page">
+                                <img
+                                    src="../assets/icons/glasses.svg"
+                                    alt="product logo"
+                                    width="20"
+                                    height="20"
+                                />
+                                <span class="nav-label">Products</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-item" href="rewards.html">
+                                <img
+                                    src="../assets/icons/gift.svg"
+                                    alt="reward logo"
+                                    width="20"
+                                    height="20"
+                                />
+                                <span class="nav-label">Rewards</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-item" href="about-us.html">
+                                <img
+                                    src="../assets/icons/users-round.svg"
+                                    alt="about logo"
+                                    width="20"
+                                    height="20"
+                                />
+                                <span class="nav-label">About Us</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="cta-container blur">
                 <a class="cta" href="order.html">
                     <img
                         src="../assets/icons/shopping-cart.svg"
@@ -96,177 +151,7 @@
                         <p>Discover our full range of frames and lenses.</p>
                     </div>
 
-                    <div class="products-grid">
-                        <!-- Product 1 -->
-                        <div class="product-card blur">
-                            <div class="product-image-container">
-                                <img
-                                    src="../assets/images/glasses-1.png"
-                                    alt="Aero Noir Frames"
-                                    class="product-image"
-                                />
-                            </div>
-                            <div class="product-info">
-                                <h3 class="product-title">Aero Noir Frames</h3>
-                                <h4 class="product-subtitle">
-                                    Modern. Lightweight. Effortless.
-                                </h4>
-                                <button
-                                    class="shop-btn open-modal-btn"
-                                    data-title="Aero Noir Frame"
-                                    data-subtitle="Modern. Lightweight. Effortless."
-                                    data-desc="A sleek frame designed for everyday clarity and comfort. Built for long-lasting wear, its lightweight construction ensures all-day comfort. Experience clear vision like never before."
-                                    data-price="Rp1.349.000"
-                                    data-img="../assets/images/glasses-1.png"
-                                >
-                                    More Details
-                                </button>
-                            </div>
-                        </div>
-
-                        <!-- Product 2 -->
-                        <div class="product-card blur">
-                            <div class="product-image-container">
-                                <img
-                                    src="../assets/images/glasses-2.jpg"
-                                    alt="Celeste Edge Frame"
-                                    class="product-image"
-                                />
-                            </div>
-                            <div class="product-info">
-                                <h3 class="product-title">
-                                    Celeste Edge Frame
-                                </h3>
-                                <h4 class="product-subtitle">
-                                    Bold. Refined. Contemporary.
-                                </h4>
-                                <button
-                                    class="shop-btn open-modal-btn"
-                                    data-title="Celeste Edge Frame"
-                                    data-subtitle="Bold. Refined. Contemporary."
-                                    data-desc="Designed with sharp modern contours and lightweight comfort, the Celeste Edge Frame delivers a confident everyday look suited for both professional and casual wear."
-                                    data-price="Rp1.899.000"
-                                    data-img="../assets/images/glasses-2.jpg"
-                                >
-                                    More Details
-                                </button>
-                            </div>
-                        </div>
-
-                        <!-- Product 3 -->
-                        <div class="product-card blur">
-                            <div class="product-image-container">
-                                <img
-                                    src="../assets/images/glasses-3.jpg"
-                                    alt="Solara Mirror Frame"
-                                    class="product-image"
-                                />
-                            </div>
-                            <div class="product-info">
-                                <h3 class="product-title">
-                                    Solara Mirror Frame
-                                </h3>
-                                <h4 class="product-subtitle">
-                                    Sharp. Sleek. Timeless..
-                                </h4>
-                                <button
-                                    class="shop-btn open-modal-btn"
-                                    data-title="Solara Mirror Frame"
-                                    data-subtitle="Sharp. Sleek. Timeless.."
-                                    data-desc="Featuring reflective lenses and a lightweight metallic frame, the Solara Mirror Frame delivers a clean modern look with everyday comfort and confident style."
-                                    data-price="Rp2.149.000"
-                                    data-img="../assets/images/glasses-3.jpg"
-                                >
-                                    More Details
-                                </button>
-                            </div>
-                        </div>
-
-                        <!-- Product 4 -->
-                        <div class="product-card blur">
-                            <div class="product-image-container">
-                                <img
-                                    src="../assets/images/glasses-4.jpg"
-                                    alt="Eclipse Noir Shades"
-                                    class="product-image"
-                                />
-                            </div>
-                            <div class="product-info">
-                                <h3 class="product-title">
-                                    Eclipse Noir Shades
-                                </h3>
-                                <h4 class="product-subtitle">
-                                    Bold. Modern. Unapologetic.
-                                </h4>
-                                <button
-                                    class="shop-btn open-modal-btn"
-                                    data-title="Eclipse Noir Shades"
-                                    data-subtitle="Bold. Modern. Unapologetic."
-                                    data-desc="Crafted with dark tinted lenses and refined gold accents, the Eclipse Noir Shades deliver a striking silhouette designed for confident everyday wear and timeless modern appeal."
-                                    data-price="Rp2.399.000"
-                                    data-img="../assets/images/glasses-4.jpg"
-                                >
-                                    More Details
-                                </button>
-                            </div>
-                        </div>
-
-                        <div class="product-card blur">
-                            <div class="product-image-container">
-                                <img
-                                    src="../assets/images/glasses-5.jpg"
-                                    alt="Velaris Shadow Frame"
-                                    class="product-image"
-                                />
-                            </div>
-                            <div class="product-info">
-                                <h3 class="product-title">
-                                    Velaris Shadow Frame
-                                </h3>
-                                <h4 class="product-subtitle">
-                                    Sleek. Confident. Distinct.
-                                </h4>
-                                <button
-                                    class="shop-btn open-modal-btn"
-                                    data-title="Velaris Shadow Frame"
-                                    data-subtitle="Sleek. Confident. Distinct."
-                                    data-desc="Combining bold black contours with subtle gold detailing, the Velaris Shadow Frame delivers a refined statement piece designed for modern comfort and everyday sophistication."
-                                    data-price="Rp2.249.000"
-                                    data-img="../assets/images/glasses-5.jpg"
-                                >
-                                    More Details
-                                </button>
-                            </div>
-                        </div>
-
-                        <div class="product-card blur">
-                            <div class="product-image-container">
-                                <img
-                                    src="../assets/images/glasses-6.jpg"
-                                    alt="Obsidian Crest Frame"
-                                    class="product-image"
-                                />
-                            </div>
-                            <div class="product-info">
-                                <h3 class="product-title">
-                                    Obsidian Crest Frame
-                                </h3>
-                                <h4 class="product-subtitle">
-                                    Clean. Bold. Elevated.
-                                </h4>
-                                <button
-                                    class="shop-btn open-modal-btn"
-                                    data-title="Obsidian Crest Frame"
-                                    data-subtitle="Clean. Bold. Elevated."
-                                    data-desc="Featuring structured black frames with refined metallic accents, the Obsidian Crest Frame blends modern luxury with lightweight comfort for a confident everyday statement."
-                                    data-price="Rp2.599.000"
-                                    data-img="../assets/images/glasses-6.jpg"
-                                >
-                                    More Details
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+                    <div class="products-grid"></div>
                 </div>
             </section>
         </main>
@@ -314,7 +199,12 @@
                         Product description.
                     </p>
                     <div class="modal-price" id="modalPrice">$0.00</div>
-                    <a href="order.html" class="shop-btn">Order Now</a>
+                    <div class="modal-actions">
+                        <a href="order.html" class="shop-btn">Order Now</a>
+                        <button class="shop-btn" id="addToCartBtn">
+                            Add to Cart
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>

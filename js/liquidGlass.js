@@ -1,4 +1,4 @@
-// implementasi liquid glass, hasil reverse engineer dari shuttletv.su
+// implementasi liquid glass buat navbar, hasil reverse engineer dari shuttletv.su
 // viva la piracy!
 
 document.addEventListener("DOMContentLoaded", () => {

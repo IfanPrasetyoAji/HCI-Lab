@@ -10,7 +10,6 @@
             rel="stylesheet"
         />
         <link rel="stylesheet" href="../css/style.css" />
-        <script src="../js/main.js" defer></script>
         <script src="../js/liquidGlass.js" defer></script>
         <title>eNVision - About Us</title>
     </head>
@@ -19,7 +18,7 @@
             <div class="brand-logo-container">
                 <span class="brand-logo">eNVision</span>
             </div>
-            <nav class="nav-container liquid-glass">
+            <nav class="nav-container desktop liquid-glass blur">
                 <div class="nav-content">
                     <ul class="nav-links">
                         <li>
@@ -56,7 +55,11 @@
                             </a>
                         </li>
                         <li>
-                            <a class="nav-item" href="about-us.html" aria-current="page">
+                            <a
+                                class="nav-item"
+                                href="about-us.html"
+                                aria-current="page"
+                            >
                                 <img
                                     src="../assets/icons/users-round.svg"
                                     alt="about logo"
@@ -69,7 +72,61 @@
                     </ul>
                 </div>
             </nav>
-            <div class="cta-container">
+            <nav class="nav-container mobile liquid-glass blur">
+                <div class="nav-content">
+                    <ul class="nav-links">
+                        <li>
+                            <a class="nav-item" href="../index.html">
+                                <img
+                                    src="../assets/icons/house.svg"
+                                    alt="home logo"
+                                    width="20"
+                                    height="20"
+                                />
+                                <span class="nav-label">Home</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-item" href="products.html">
+                                <img
+                                    src="../assets/icons/glasses.svg"
+                                    alt="product logo"
+                                    width="20"
+                                    height="20"
+                                />
+                                <span class="nav-label">Products</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-item" href="rewards.html">
+                                <img
+                                    src="../assets/icons/gift.svg"
+                                    alt="reward logo"
+                                    width="20"
+                                    height="20"
+                                />
+                                <span class="nav-label">Rewards</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                class="nav-item"
+                                href="about-us.html"
+                                aria-current="page"
+                            >
+                                <img
+                                    src="../assets/icons/users-round.svg"
+                                    alt="about logo"
+                                    width="20"
+                                    height="20"
+                                />
+                                <span class="nav-label">About Us</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="cta-container blur">
                 <a class="cta" href="order.html">
                     <img
                         src="../assets/icons/shopping-cart.svg"
@@ -82,8 +139,127 @@
             </div>
         </header>
 
-        <main class="site-content">
+        <main class="site-content about-main">
             <div class="bg-image"></div>
+
+            <section class="about-hero">
+                <div class="about-eyebrow">Our Story</div>
+                <h1>Clarity, redefined.</h1>
+                <p>
+                    eNVision was born from a simple belief that everyone
+                    deserves to see the world in perfect clarity. What started
+                    as a small optical studio has grown into a destination for
+                    modern eyewear, crafted with care and designed for life.
+                </p>
+            </section>
+
+            <section class="about-section">
+                <div class="about-container">
+                    <div class="about-grid">
+                        <div class="about-image-card blur">
+                            <img
+                                src="../assets/images/origin.jpg"
+                                alt="eNVision studio"
+                            />
+                        </div>
+                        <div class="about-text-card blur">
+                            <h2>Our Origin</h2>
+                            <p>
+                                Founded in 2020 in the heart of Terang Cerah
+                                Merona, eNVision began as a small workshop with
+                                a big dream. Our founders, two optometry
+                                graduates, noticed a gap in the market. Eyewear
+                                was either too clinical or too trendy, with
+                                little attention to how it actually felt to
+                                wear.
+                            </p>
+                            <p>
+                                They set out to create frames that balanced
+                                precision optics with everyday comfort. Every
+                                frame is tested for fit, weight, and durability
+                                before it reaches your hands.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="about-section">
+                <div class="about-container">
+                    <div class="about-grid about-grid-reverse">
+                        <div class="about-image-card blur">
+                            <img
+                                src="../assets/images/philosophy.jpg"
+                                alt="Craftsmanship"
+                            />
+                        </div>
+                        <div class="about-text-card blur">
+                            <h2>Our Philosophy</h2>
+                            <p>
+                                We believe eyewear is more than a prescription,
+                                it is an extension of how you express yourself
+                                and how you experience the world.
+                            </p>
+                            <p>
+                                Every frame we design follows three principles:
+                                <strong>comfort</strong> that lasts all day,
+                                <strong>clarity</strong> that meets medical
+                                standards, and <strong>style</strong> that feels
+                                naturally yours.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="about-section about-founders">
+                <div class="about-container">
+                    <div class="about-header">
+                        <h2>Meet the Founders</h2>
+                        <p>The people behind eNVision.</p>
+                    </div>
+
+                    <div class="founders-grid">
+                        <article class="founder-card blur">
+                            <div class="founder-avatar">
+                                <img
+                                    src="../assets/images/woman.jpg"
+                                    alt="Raden Ayu"
+                                />
+                            </div>
+                            <h3>Raden Ayu</h3>
+                            <span class="founder-role"
+                                >Co-Founder & Optometrist</span
+                            >
+                            <p>
+                                With over a decade of clinical experience, Raden
+                                ensures every frame meets precise optical
+                                standards. She leads product development and
+                                quality assurance.
+                            </p>
+                        </article>
+
+                        <article class="founder-card blur">
+                            <div class="founder-avatar">
+                                <img
+                                    src="../assets/images/man.jpg"
+                                    alt="Dimas Pradipta"
+                                />
+                            </div>
+                            <h3>Dimas Pradipta</h3>
+                            <span class="founder-role"
+                                >Co-Founder & Designer</span
+                            >
+                            <p>
+                                A designer by trade and a craftsman at heart,
+                                Dimas shapes every collection with a focus on
+                                timeless form, lightweight materials, and
+                                everyday wearability.
+                            </p>
+                        </article>
+                    </div>
+                </div>
+            </section>
         </main>
 
         <footer class="site-footer">
