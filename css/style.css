@@ -1150,6 +1150,11 @@ body {
     border-color: black;
 }
 
+@media (max-width: 768px) {
+    .cart-total {
+        flex-direction: column;
+    }
+}
 /* Form */
 .cart-form {
     margin-top: 2rem;
